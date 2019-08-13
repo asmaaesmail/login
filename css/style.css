@@ -114,7 +114,7 @@ body {
   /*header*/
 /*******************************************************************/
 .header{
-    padding: 33px 0
+    padding: 50px 0
 }
 
 img.logo {
@@ -498,7 +498,7 @@ section.special ul li img {
 }
 
 /*****responsive***********/
-@media only screen and (max-width: 418px) {
+@media only screen and (max-width: 600px) {
     img.logo {
     width: 42px;
 }
@@ -550,8 +550,12 @@ img.coffee1 {
     margin-top: -8px;
 }
     .header {
-    padding: 25px 0;
+    padding: 40px 0;
 }
+    section.content {
+    padding: 20px 0;
+}
+
 } 
 @media only screen and (max-width: 450px) {
     .content-form {
