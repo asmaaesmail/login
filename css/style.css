@@ -65,10 +65,11 @@ body {
     overflow-x: hidden !important;
      direction: rtl;
     text-align: right;
-    position: relative
+    position: relative;
+    background-color: #dbf3fd
    
 }
-body::after{
+/*body::after{
     position: absolute;
     content: "";
     top: 0;
@@ -76,7 +77,7 @@ body::after{
     right: 0;
     bottom: 0;
     background-color: rgba(147, 214, 255, 0.29);
-}
+}*/
 /*******************************************************************/
   /*componenent*/
 /*******************************************************************/
@@ -113,7 +114,7 @@ body::after{
   /*header*/
 /*******************************************************************/
 .header{
-    padding: 20px 0
+    padding: 33px 0
 }
 
 img.logo {
@@ -130,11 +131,15 @@ img.logo {
     color: #4d6a7d;
     text-decoration: none;
     font-size: 16px;
+    transition: all .4s ease-in-out
+}
+.social a:hover i {
+    animation: bump .4s ease-in-out;
 }
 .logo-flex{
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: flex-end
 }
 .logo-flex img{ 
     margin-right: 15px
@@ -144,8 +149,125 @@ img.logo {
     margin-bottom: -7px;
 }
 
+
+
+
+@-webkit-keyframes bump {
+  33% {
+    -webkit-transform: scale(1.4);
+  }
+  66% {
+    -webkit-transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1.0);
+  }
+}
+
+/*************************************************************************************************/
+/***************content***************/
+/************************************************************************************************/
+
+
+
+.btn {
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #7bc9dd;
+  padding: 13px 50px;
+  margin:18px 0 ;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+    border-radius: 10px;
+    width: 170px
+}
+
+.btn span {
+  position: relative; 
+  z-index: 1;
+    font-size: 20px
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #303e48;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-110%) translateY(-25%) rotate(45deg);
+}
+.btn:hover {
+color: #fff
+}
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: unset;
+}
+.btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.content-words {
+    text-align: right;
+}
+.content .row {
+    display: flex;
+    align-items: center;
+}
+img.coffee1 {
+    width: 230px;
+}
+.p-code{
+    font-size: 16px
+}
+.regist-now{
+    
+    font-weight: bold;
+    }
+/*************************************************************************************************/
+/**************footer****************/
+/*************************************************************************************************/
+.footer-words{
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    
+}
+.footer-words p{
+    color: #fff;
+    font-weight: bold;
+    font-size: 70px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    
+    
+}
+.footer-words .p1{
+    font-family: Cairo-Black
+    
+}
+.footer-words .p2{
+    font-family: Cairo-Light;
+    margin-top: -20px;
+   
+}
 /*************************************************************************************************/
 /******************************/
+/*************************************************************************************************/
 
 section.special ul li {
 	width: 90px;
@@ -397,9 +519,39 @@ section.special ul li img {
    ;
     font-size: 15px;
 }
+/***content*/
+    .regist-now{
+        font-size: 18px;
+    font-weight: bold;
+    }
+img.coffee1 {
+    width: 165px;
+}
+    .btn{
+        width: 135px
+    }
+    .btn:after {
 
-
+    -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    transform: translateX(-121%) translateY(-18%) rotate(45deg);
+}
+  .p-code {
+    font-size: 14px;
+}
+    .footer-words p {
+   
+    font-size: 23px;
+   
+    text-transform: uppercase;
+}
     
+    .footer-words .p2 {
+    font-family: Cairo-Light;
+    margin-top: -8px;
+}
+    .header {
+    padding: 25px 0;
+}
 } 
 @media only screen and (max-width: 450px) {
     .content-form {
@@ -425,3 +577,126 @@ section.special ul li img {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {...}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* start loading */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999999;
+    background:#303e48;
+    right: 0;
+    margin: 0 auto;
+}
+
+.loading {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 400px;
+    height: 400px;
+}
+
+.loader-outer {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    border-bottom: 1px solid #303030;
+    background: #151515;
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.loader-outer .loader-inner {
+    position: absolute;
+    margin: auto;
+    top: -29px;
+    left: -100px;
+    width: auto;
+    height: 58px;
+    color: #447689;
+    text-align: center;
+    text-shadow: 0 0 20px #447689;
+    font-size: 60px;
+    z-index: 2;
+    animation: load 2s infinite linear;
+}
+
+.loader h1 {
+    position: absolute;
+    margin: auto;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 85px;
+    height: 40px;
+    text-transform: uppercase;
+    text-align: left;
+    text-shadow: 0 0 20px #447689;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    font-weight: lighter;
+    color: #447689;
+}
+
+.loader h1 span {
+    display: none;
+}
+
+.loader h1::after {
+    animation: txt 1s infinite;
+    content: "";
+}
+
+@keyframes load {
+    0% {
+        left: -100px;
+    }
+
+    100% {
+        left: 220px;
+    }
+}
+
+@keyframes txt {
+    0% {
+        content: "LOADING";
+    }
+
+    35% {
+        content: "LOADING.";
+    }
+
+    65% {
+        content: "LOADING..";
+    }
+
+    100% {
+        content: "LOADING...";
+    }
+}
